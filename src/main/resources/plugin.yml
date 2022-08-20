@@ -1,0 +1,26 @@
+name: NoteBlockItemSongLoader
+version: '${project.version}'
+main: github.regularrabbit05.noteblockitemsongloader.NoteBlockItemSongLoader
+prefix: NBTSongLoader
+depend: [ NoteBlockAPI ]
+authors: [ RegularRabbit05, MaLoCraft ]
+description: Allows server owners to load and save noteblock songs from/to Minecraft items using NBT data (max ~2MB)
+website: https://github.com/RegularRabbit05/NoteBlockItemSongLoader
+
+commands:
+  playSong:
+    description: Plays the song stored in your current item
+    usage: /<command>
+    permission: nbtsongplayer.play
+  saveSong:
+    description: Download a song from an url to your current item (You can use a temp file service, the data will be saved in the item)
+    usage: /<command> <url>
+    permission: nbtsongplayer.save
+  removeSong:
+    description: Delete a song from an item
+    usage: /<command>
+    permission: nbtsongplayer.remove
+  getSong:
+    description: Displays the song's metadata stored in your current item
+    usage: /<command>
+    permission: nbtsongplayer.info
