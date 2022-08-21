@@ -24,7 +24,8 @@ public class SongRemoverCommand implements CommandExecutor {
         Player player = (Player) sender;
 
         //Get the item in the main hand and check if it's valid
-        ItemStack item = player.getInventory().getItemInMainHand();
+        ItemStack item;
+        item = player.getItemInHand(); //Support for < 1.9
 
         //Remove the song, the item will become null if it was invalid
         item = SongRemover.removeSong(item);
@@ -36,7 +37,8 @@ public class SongRemoverCommand implements CommandExecutor {
         }
 
         //Set the new item as main hand item
-        player.getInventory().setItemInMainHand(item);
+        player.setItemInHand(item); //Support for < 1.9
+
         sender.sendMessage("Item's Song removed successfully!");
 
         return true;

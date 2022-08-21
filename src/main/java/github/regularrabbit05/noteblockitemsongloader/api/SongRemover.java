@@ -7,7 +7,8 @@ import org.bukkit.inventory.ItemStack;
 import static github.regularrabbit05.noteblockitemsongloader.api.Constants.PATH;
 
 @SuppressWarnings("unused")
-public class SongRemover {
+public final class SongRemover {
+    private SongRemover() {}
     public static ItemStack removeSong(ItemStack stack) {
         if (stack == null || stack.getType() == null || stack.getType() == Material.AIR) return null;
         NBTItem item = new NBTItem(stack);

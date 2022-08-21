@@ -25,7 +25,8 @@ public class SongInfoCommand implements CommandExecutor {
         Player player = (Player) sender;
 
         //Check if the item is valid
-        ItemStack item = player.getInventory().getItemInMainHand();
+        ItemStack item;
+        item = player.getItemInHand(); //Support for < 1.9
         if (item == null || item.getType() == Material.AIR) {
             sender.sendMessage("You must be holding a valid item with a song saved in it!");
             return true;

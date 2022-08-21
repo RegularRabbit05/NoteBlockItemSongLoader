@@ -11,7 +11,9 @@ import java.net.URL;
 import static github.regularrabbit05.noteblockitemsongloader.api.Constants.PATH;
 
 @SuppressWarnings("unused")
-public class SongSaver {
+public final class SongSaver {
+    private SongSaver() {}
+
     private static byte[] copyURLToByteArray(final String urlStr) throws IOException, NullPointerException {
         return IOUtils.toByteArray(new URL(urlStr));
     }

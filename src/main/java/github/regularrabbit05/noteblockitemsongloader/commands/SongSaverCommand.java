@@ -30,7 +30,8 @@ public class SongSaverCommand implements CommandExecutor {
         Player player = (Player) sender;
 
         //Check if the item is valid
-        ItemStack item = player.getInventory().getItemInMainHand();
+        ItemStack item;
+        item = player.getItemInHand(); //Support for < 1.9
         if (item == null || item.getType() == null || item.getType() == Material.AIR) {
             sender.sendMessage("Please hold a valid item!");
             return true;
@@ -57,7 +58,7 @@ public class SongSaverCommand implements CommandExecutor {
         }
 
         //Save the file
-        player.getInventory().setItemInMainHand(item);
+        player.setItemInHand(item); //Support for < 1.9
         sender.sendMessage("Song saved successfully!");
 
         return true;
